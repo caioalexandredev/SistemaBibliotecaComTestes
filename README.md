@@ -121,4 +121,4 @@ Embora o foco deste projeto tenha sido na lógica de negócio e nos testes, uma 
 Feito com ❤️ por 
 
 - **Caio Alexandre de Sousa Ramos** - alexandre.caio.ramos@gmail.com.
-- **Idelton Borges** - alexandre.caio.ramos@gmail.com.
+- **Idelton Borges de Alencar** - ideltonborges@outlook.com.
