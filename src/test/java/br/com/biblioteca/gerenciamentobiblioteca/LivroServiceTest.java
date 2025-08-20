@@ -1,7 +1,9 @@
 package br.com.biblioteca.gerenciamentobiblioteca;
 
 import br.com.biblioteca.gerenciamentobiblioteca.model.Livro;
+import br.com.biblioteca.gerenciamentobiblioteca.repository.EmprestimoRepository;
 import br.com.biblioteca.gerenciamentobiblioteca.repository.LivroRepository;
+import br.com.biblioteca.gerenciamentobiblioteca.repository.UsuarioRepository;
 import br.com.biblioteca.gerenciamentobiblioteca.service.LivroService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -22,8 +24,16 @@ class LivroServiceTest {
     @Autowired
     private LivroRepository livroRepository;
 
+    @Autowired
+    private EmprestimoRepository emprestimoRepository;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
     @BeforeEach
     void setUp() {
+        emprestimoRepository.deleteAll();
+        usuarioRepository.deleteAll();
         livroRepository.deleteAll();
 
         // Insere alguns livros de exemplo

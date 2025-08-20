@@ -1,9 +1,7 @@
 package br.com.biblioteca.gerenciamentobiblioteca.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import br.com.biblioteca.gerenciamentobiblioteca.enumerator.StatusLivro;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -22,9 +20,20 @@ public class Livro {
     private String autor;
     private String categoria;
 
+    @Enumerated(EnumType.STRING) // Grava o nome do enum ("DISPONIVEL") no banco, que é mais legível
+    private StatusLivro status = StatusLivro.DISPONIVEL;
+
     public Livro(String titulo, String autor, String categoria) {
         this.titulo = titulo;
         this.autor = autor;
         this.categoria = categoria;
+        this.status = StatusLivro.DISPONIVEL;
+    }
+
+    public Livro(String titulo, String autor, String categoria, StatusLivro status) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.categoria = categoria;
+        this.status = status;
     }
 }
